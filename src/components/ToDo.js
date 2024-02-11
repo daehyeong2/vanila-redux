@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import { actionCreators } from "../store";
+import { remove } from "../store";
 import { Link } from "react-router-dom";
 
 const ToDo = ({ text, id, deleteToDo }) => {
@@ -12,7 +12,7 @@ const ToDo = ({ text, id, deleteToDo }) => {
 };
 
 const mapDispatchToProps = (dispatch, { id }) => {
-  return { deleteToDo: () => dispatch(actionCreators.deleteToDo(id)) };
+  return { deleteToDo: () => dispatch(remove(id)) };
 };
 
 export default connect(null, mapDispatchToProps)(ToDo);

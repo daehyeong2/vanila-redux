@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import { Link, useNavigate, useParams } from "react-router-dom";
-import { actionCreators } from "../store";
+import { remove } from "../store";
 
 const Detail = ({ state, deleteToDo }) => {
   const navigate = useNavigate();
@@ -25,7 +25,7 @@ const mapStateProps = (state) => {
 };
 
 const mapDispatchProps = (dispatch) => {
-  return { deleteToDo: (id) => dispatch(actionCreators.deleteToDo(+id)) };
+  return { deleteToDo: (id) => dispatch(remove(+id)) };
 };
 
 export default connect(mapStateProps, mapDispatchProps)(Detail);
